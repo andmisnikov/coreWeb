@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SophicAutomation", "SophicAutomation\SophicAutomation.csproj", "{2BC9A670-4E42-4F4F-9B19-B0C506448D8B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{273BC85B-F5A8-4199-AAC0-2B335DB9C0AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "BL\BL.csproj", "{6FB53F9D-515C-4FBE-9F07-9B60153467CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BC9A670-4E42-4F4F-9B19-B0C506448D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BC9A670-4E42-4F4F-9B19-B0C506448D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BC9A670-4E42-4F4F-9B19-B0C506448D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BC9A670-4E42-4F4F-9B19-B0C506448D8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{273BC85B-F5A8-4199-AAC0-2B335DB9C0AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{273BC85B-F5A8-4199-AAC0-2B335DB9C0AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{273BC85B-F5A8-4199-AAC0-2B335DB9C0AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{273BC85B-F5A8-4199-AAC0-2B335DB9C0AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FB53F9D-515C-4FBE-9F07-9B60153467CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FB53F9D-515C-4FBE-9F07-9B60153467CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FB53F9D-515C-4FBE-9F07-9B60153467CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FB53F9D-515C-4FBE-9F07-9B60153467CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61E64C3D-28FB-4BD0-B45C-8D015F8DE4A9}
+	EndGlobalSection
+EndGlobal
