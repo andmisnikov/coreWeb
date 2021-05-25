@@ -13,15 +13,29 @@
 </head>
 <body>
 
-<form asp-action="Index" method="get">
-        <div class=form-actions no-color">
-            <p>
-                Find by name: <input type="text" name="searchString" value="@ViewData["CurrentFilter"]" />
-                <input type="submit" value="Search" class="btn btn-default" /> |
-                <a asp-action="Index">Clear</a>
-            </p>
+    <div class="row">
+        <div class="col-sm-8">
+            <form asp-action="Index" method="get">
+                <div class=form-actions no-color">
+                    <p>
+                        Find by name: <input type="text" name="searchString" value="@ViewData["CurrentFilter"]" />
+                        <input type="submit" value="Search" class="btn btn-default" /> |
+                        <a asp-action="Index">Clear</a>
+                    </p>
+                </div>
+            </form>
         </div>
-    </form>
+        <div class="col-sm-4">
+            <div style="text-align: right;">
+                <a asp-action="DownloadCsv"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                   class="btn btn-primary">
+                    Export to CSV
+                </a>
+            </div>
+
+        </div>
+    </div>
 
     <table class="table">
         <thead>
@@ -30,9 +44,9 @@
                 <th>Email</th>
                 <th>Name</th>
                 <th>Surname</th>
+                <th>City</th>
                 <th>Street</th>
                 <th>Zip</th>
-                <th>City</th>
                 <th>RegisterDate</th>
                 <th>Action</th>
             </tr>
@@ -54,13 +68,13 @@
                         @Html.DisplayFor(modelItem => item.Surname)
                     </td>
                     <td>
+                        @Html.DisplayFor(modelItem => item.City)
+                    </td>
+                    <td>
                         @Html.DisplayFor(modelItem => item.Street)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Zip)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.City)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.RegisterDate)
@@ -80,21 +94,28 @@
         var nextDisabled = !Model.HasNextPage ? "disabled" : "";
     }
 
-    <a asp-action="Index"
-       asp-route-sortOrder="@ViewData["CurrentSort"]"
-       asp-route-pageNumber="@(Model.PageIndex - 1)"
-       asp-route-currentFilter="@ViewData["CurrentFilter"]"
-       class="btn btn-primary @prevDisabled">
-        Previous
-    </a>
-    <a asp-action="Index"
-       asp-route-sortOrder="@ViewData["CurrentSort"]"
-       asp-route-pageNumber="@(Model.PageIndex + 1)"
-       asp-route-currentFilter="@ViewData["CurrentFilter"]"
-       class="btn btn-primary @nextDisabled">
-        Next
-    </a>
-    <span style="margin-left: 7px" class="label label-default">Page @Model.PageIndex / @Model.TotalPages</span>
-
+    <div class="row">
+        <div class="col-sm-8">
+            <a asp-action="Index"
+               asp-route-sortOrder="@ViewData["CurrentSort"]"
+               asp-route-pageNumber="@(Model.PageIndex - 1)"
+               asp-route-currentFilter="@ViewData["CurrentFilter"]"
+               class="btn btn-primary @prevDisabled">
+                Previous
+            </a>
+            <a asp-action="Index"
+               asp-route-sortOrder="@ViewData["CurrentSort"]"
+               asp-route-pageNumber="@(Model.PageIndex + 1)"
+               asp-route-currentFilter="@ViewData["CurrentFilter"]"
+               class="btn btn-primary @nextDisabled">
+                Next
+            </a>
+        </div>
+        <div class="col-sm-4">
+            <div style="text-align: right;">
+                <span class="label label-default">Page @Model.PageIndex / @Model.TotalPages </span>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

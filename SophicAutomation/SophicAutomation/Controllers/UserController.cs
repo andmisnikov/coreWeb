@@ -3,6 +3,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using BL.Dto;
 using BL.Interfaces;
+using Common;
 using DAL.Entities;
 using LinqKit;
 using Microsoft.AspNetCore.Authorization;
@@ -47,6 +48,28 @@ namespace SophicAutomation.Controllers
             return predicate;
         }
 
+        public FileContentResult DownloadCsv(string currentFilter)
+        {
+            CsvExport export = new CsvExport { Delimiter = "," };
+            var users = this.userService.GetPage( 1, Int32.MaxValue, this.BuildExpressionToSearchByFields(currentFilter), out int count);
+            foreach (var user in users)
+            {
+                export.AddRow();
+
+                export["User Name"] = user.UserName;
+                export["Email"] = user.Email;
+                export["Name"] = user.Name;
+                export["Surname"] = user.Surname; 
+                export["City"] = user.City;
+                export["Street"] = user.Street;
+                export["Zip"] = user.Zip;
+                export["Register Date"] = user.RegisterDate.ToUniversalTime();
+            }
+
+            var bytes = export.ExportToBytes();
+
+            return File(bytes, "text/csv", "users.csv");
+        }
 
         public async Task<IActionResult> Index(string currentFilter, string searchString, int? pageNumber)
         {

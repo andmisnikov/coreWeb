@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SophicAutomation", "SophicA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{273BC85B-F5A8-4199-AAC0-2B335DB9C0AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "BL\BL.csproj", "{6FB53F9D-515C-4FBE-9F07-9B60153467CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BL", "BL\BL.csproj", "{6FB53F9D-515C-4FBE-9F07-9B60153467CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{71D88D8A-B91D-4B2A-87B3-3810EBA033B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{6FB53F9D-515C-4FBE-9F07-9B60153467CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FB53F9D-515C-4FBE-9F07-9B60153467CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FB53F9D-515C-4FBE-9F07-9B60153467CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71D88D8A-B91D-4B2A-87B3-3810EBA033B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71D88D8A-B91D-4B2A-87B3-3810EBA033B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71D88D8A-B91D-4B2A-87B3-3810EBA033B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71D88D8A-B91D-4B2A-87B3-3810EBA033B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
