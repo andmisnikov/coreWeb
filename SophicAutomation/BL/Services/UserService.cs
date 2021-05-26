@@ -7,6 +7,7 @@ using BL.Dto;
 using BL.Interfaces;
 using DAL.Entities;
 using DAL.Interfaces;
+using DAL.Models;
 using LinqKit;
 
 namespace BL.Services
@@ -46,6 +47,11 @@ namespace BL.Services
         {
             var applicationUser = this.Mapper.Map<ApplicationUser>(userDto);
             return this.userRepository.UpdatePersonalInfo(applicationUser);
+        }
+
+        public Task<List<UsersRegisteredPerDay>> UsersRegisteredPerDay()
+        {
+            return this.userRepository.UsersRegisteredPerDay();
         }
 
         /// <summary>

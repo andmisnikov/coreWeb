@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using BL.Dto;
+using DAL.Models;
 
 namespace BL.Interfaces
 {
@@ -15,5 +16,7 @@ namespace BL.Interfaces
         public Task<int> Delete(string id);
 
         public Task<int> UpdatePersonalInfo(UserDto applicationUser);
+
+        public Task<List<UsersRegisteredPerDay>> UsersRegisteredPerDay();
     }
 }

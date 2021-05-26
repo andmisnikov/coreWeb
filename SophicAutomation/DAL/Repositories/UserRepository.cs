@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using DAL.Entities;
 using DAL.Interfaces;
+using DAL.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Repositories
@@ -58,6 +59,15 @@ namespace DAL.Repositories
             this.databaseContext.Entry(appUser).Property(p => p.Zip).IsModified = true;
             this.databaseContext.Entry(appUser).Property(p => p.City).IsModified = true;
             return this.databaseContext.SaveChangesAsync();
+        }
+
+        public Task<List<UsersRegisteredPerDay>> UsersRegisteredPerDay()
+        {
+            return this.databaseSet
+                .Where(w => w.RegisterDate != null)
+                .GroupBy(g => g.RegisterDate.Value.Date)
+                .OrderBy(o => o.Key)
+                .Select(grp => new UsersRegisteredPerDay {Day = grp.Key, UsersRegistered = grp.Count()}).ToListAsync();
         }
     }
 }

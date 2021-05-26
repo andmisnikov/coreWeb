@@ -21,10 +21,11 @@ Create a simple web application that consist:
 # Web App structure
 .Net Core 3.1 MVC Web App with Identity
 
-The solution contains 3 projects:
+The solution contains 4 projects:
 1) BL - Business Logic layer
 2) DAL - Data Access Layer (EF)
 3) SophicAutomation - .Net core MVC application + default identity with scaffolding
+4) Common - tools and helpers
 
 The solution contains the following packages:
 1) LinqKit to build expressions for IQueryable<TSource>

@@ -174,5 +174,11 @@ namespace SophicAutomation.Controllers
 
             return this.View(user);
         }
+
+        public async Task<IActionResult> UsersRegisteredPerDay()
+        {
+            var items = await this.userService.UsersRegisteredPerDay();
+            return Json(items);
+        }
     }
 }
